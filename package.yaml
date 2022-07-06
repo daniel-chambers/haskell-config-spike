@@ -1,0 +1,65 @@
+name:                haskell-config-spike
+version:             0.1.0.0
+github:              "daniel-chambers/haskell-config-spike"
+license:             BSD3
+author:              "Daniel Chambers"
+maintainer:          "daniel@digitallycreated.net"
+copyright:           "2022 Daniel Chambers"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/daniel-chambers/haskell-config-spike#readme>
+
+default-extensions:
+  - DerivingStrategies
+  - ImportQualifiedPost
+  - LambdaCase
+  - OverloadedStrings
+  - RankNTypes
+  - RecordWildCards
+  - ScopedTypeVariables
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- attoparsec
+- containers
+- jsonpath
+- lens
+- lens-aeson
+- mtl
+- optparse-applicative
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  haskell-config-spike-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-config-spike
+
+tests:
+  haskell-config-spike-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-config-spike

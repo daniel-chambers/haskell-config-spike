@@ -1,0 +1,110 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           haskell-config-spike
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/daniel-chambers/haskell-config-spike#readme>
+homepage:       https://github.com/daniel-chambers/haskell-config-spike#readme
+bug-reports:    https://github.com/daniel-chambers/haskell-config-spike/issues
+author:         Daniel Chambers
+maintainer:     daniel@digitallycreated.net
+copyright:      2022 Daniel Chambers
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/daniel-chambers/haskell-config-spike
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_haskell_config_spike
+  hs-source-dirs:
+      src
+  default-extensions:
+      DerivingStrategies
+      ImportQualifiedPost
+      LambdaCase
+      OverloadedStrings
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+  build-depends:
+      aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , containers
+    , jsonpath
+    , lens
+    , lens-aeson
+    , mtl
+    , optparse-applicative
+    , text
+  default-language: Haskell2010
+
+executable haskell-config-spike-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_config_spike
+  hs-source-dirs:
+      app
+  default-extensions:
+      DerivingStrategies
+      ImportQualifiedPost
+      LambdaCase
+      OverloadedStrings
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , containers
+    , haskell-config-spike
+    , jsonpath
+    , lens
+    , lens-aeson
+    , mtl
+    , optparse-applicative
+    , text
+  default-language: Haskell2010
+
+test-suite haskell-config-spike-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_haskell_config_spike
+  hs-source-dirs:
+      test
+  default-extensions:
+      DerivingStrategies
+      ImportQualifiedPost
+      LambdaCase
+      OverloadedStrings
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , containers
+    , haskell-config-spike
+    , jsonpath
+    , lens
+    , lens-aeson
+    , mtl
+    , optparse-applicative
+    , text
+  default-language: Haskell2010
